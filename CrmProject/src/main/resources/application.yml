@@ -1,0 +1,74 @@
+## 端口号  上下文路径
+server:
+  port: 9898
+  servlet:
+    context-path: /crm  #项目名
+
+## 数据源配置
+spring:
+  datasource:
+    type: com.mchange.v2.c3p0.ComboPooledDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/crm?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2b8
+    username: root
+    password: 123456
+
+  ## freemarker
+  #  freemarker:
+  #    suffix: .ftl
+  #    content-type: text/html
+  #    charset: UTF-8
+  #    template-loader-path: classpath:/views/
+  # THYMELEAF (ThymeleafAutoConfiguration)
+  # 开启模板缓存（默认值： true ）
+
+  thymeleaf:
+    cache: false
+    # 检查模板是否存在，然后再呈现
+    check-template: true
+    # 检查模板位置是否正确（默认值 :true ）
+    check-template-location: true
+    #Content-Type 的值（默认值： text/html ）
+    # spring.thymeleaf.content-type=text/html
+    # 开启 MVC Thymeleaf 视图解析（默认值： true ）
+    enabled: true
+    # 模板编码
+    encoding: UTF-8
+    # 要被排除在解析之外的视图名称列表，用逗号分隔
+    #    excluded-view-names:
+    # 要运⽤于模板之上的模板模式。另⻅ StandardTemplate-ModeHandlers( 默认值： HTML5)
+    mode: HTML5
+    # 在构建 URL 时添加到视图名称前的前缀（默认值： classpath:/templates/ ）
+    prefix: classpath:/templates/
+    # 在构建 URL 时添加到视图名称后的后缀（默认值： .html ）
+    suffix: .html
+
+  ## 启用热部署
+  devtools:
+    restart:
+      enabled: true
+      additional-paths: src/main/java
+## mybatis 配置
+#mybatis:
+#  mapper-locations: classpath:/mapper/*.xml
+#  type-aliases-package: com.softeem.crm.vo;com.softeem.crm.query;com.softeem.crm.dto
+#  configuration:
+#    map-underscore-to-camel-case: true #开启驼峰
+
+# mybatis-plus 配置
+mybatis-plus:
+  mapper-locations: classpath:/mapper/*.xml # 配置mapper
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #日志
+
+## pageHelper
+#pagehelper:
+#  helper-dialect: mysql
+
+## 设置 dao 日志打印级别
+#logging:
+#  level:
+#    com:
+#      softeem:
+#        crm:
+#          dao: debug

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <th:block th:include="common::common"/>
+</head>
+<body class="childrenBody">
+<form class="layui-form" style="width:80%;">
+    <input name="id" type="hidden" th:value="${customerLoss?.id}"/>
+    <div class="layui-form-item layui-row layui-col-xs12">
+        <label class="layui-form-label">请输入流失原因</label>
+        <div class="layui-input-block">
+            <input type="text" class="layui-input userName"
+                   lay-verify="required" name="lossReason" id="lossReason"
+                   th:value="${customerLoss.lossReason}"
+                   placeholder="请输入流失原因">
+        </div>
+    </div>
+    <div class="layui-form-item layui-row layui-col-xs12">
+        <label class="layui-form-label">请输入流失时间</label>
+        <div class="layui-input-block">
+            <input type="text" class="layui-input userName"
+                   lay-verify="required" name="confirmLossTime" id="confirmLossTime"
+                   th:value="${#dates.format(customerLoss?.confirmLossTime,'yyyy-MM-dd')}"
+                   placeholder="请输入流失时间xxxx:xx:xx">
+        </div>
+    </div>
+
+
+    <br/>
+    <div class="layui-form-item layui-row layui-col-xs12">
+        <div class="layui-input-block">
+            <button class="layui-btn layui-btn-lg" lay-submit=""
+                    lay-filter="updateCusLoss">确认
+            </button>
+            <button class="layui-btn layui-btn-lg layui-btn-normal">取消</button>
+        </div>
+    </div>
+</form>
+<script type="text/javascript" th:src="@{/js/customerLoss/customer.loss.update.js}"></script>
+</body>
+</html>

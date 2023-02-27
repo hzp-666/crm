@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <th:block th:include="common::common"/>
+</head>
+<body class="childrenBody">
+<form class="layui-form" style="width:80%;">
+    <input name="id" type="hidden" th:value="${linkMan?.id}"/>
+    <input name="cusId" type="hidden" th:value="${cusId}"/>
+    <div class="layui-form-item layui-row layui-col-xs12">
+        <label class="layui-form-label">联系人姓名</label>
+        <div class="layui-input-block">
+            <input type="text" class="layui-input userName"
+                   lay-verify="required" name="linkName" id="linkName" th:value="${linkMan?.linkName}"
+                   placeholder="请输入联系人姓名">
+        </div>
+    </div>
+    <div class="layui-form-item layui-row layui-col-xs12">
+        <label class="layui-form-label">联系人性别</label>
+        <div class="layui-input-block">
+            <input type="text" class="layui-input userName"
+                   lay-verify="required" name="sex" id="sex" th:value="${linkMan?.sex}"
+                   placeholder="请输入联系人性别">
+        </div>
+    </div>
+    <div class="layui-form-item layui-row layui-col-xs12">
+        <label class="layui-form-label">联系人职位</label>
+        <div class="layui-input-block">
+            <input type="text" class="layui-input userName"
+                   lay-verify="required" name="zhiwei" id="zhiwei" th:value="${linkMan?.zhiwei}"
+                   placeholder="请输入联系人职位">
+        </div>
+    </div>
+    <div class="layui-form-item layui-row layui-col-xs12">
+        <label class="layui-form-label">联系人工作电话</label>
+        <div class="layui-input-block">
+            <input type="text" class="layui-input userName"
+                   lay-verify="required" name="officePhone" id="officePhone" th:value="${linkMan?.officePhone}"
+                   placeholder="请输入联系人工作电话">
+        </div>
+    </div>
+    <div class="layui-form-item layui-row layui-col-xs12">
+        <label class="layui-form-label">联系人电话</label>
+        <div class="layui-input-block">
+            <input type="text" class="layui-input userName"
+                   lay-verify="required" name="phone" id="phone" th:value="${linkMan?.phone}"
+                   placeholder="请输入联系人电话">
+        </div>
+    </div>
+    <!--<div class="layui-form-item layui-row layui-col-xs12">
+        <label class="layui-form-label">计划时间</label>
+        <div class="layui-input-block">
+            &lt;!&ndash;            <#if (cusDevPlan.planDate)??>&ndash;&gt;
+            <input type="text" class="layui-input userName"
+                   lay-verify="required" name="planDate" id="planDate"
+                   th:value="${#dates.format(cusDevPlan?.planDate,'yyyy-MM-dd HH:mm:ss')}"
+                   placeholder="请输入计划项时间">
+            &lt;!&ndash;<#else>
+            <input type="text" class="layui-input userName"
+                   lay-verify="required" name="planDate" id="planDate" placeholder="请输入计划项时间">
+        </
+        #if>&ndash;&gt;
+
+        </div>
+    </div>
+    <div class="layui-form-item layui-row layui-col-xs12">
+        <label class="layui-form-label">执行效果</label>
+        <div class="layui-input-block">
+            <input type="text" class="layui-input userEmail"
+                   lay-verify="required" name="exeAffect" th:value="${cusDevPlan?.exeAffect}"
+                   id="exeAffect" placeholder="请输入执行效果">
+        </div>
+    </div>-->
+    <br/>
+    <div class="layui-form-item layui-row layui-col-xs12">
+        <div class="layui-input-block">
+            <button class="layui-btn layui-btn-lg" lay-submit=""
+                    lay-filter="addOrUpdateCusLinkMan">确认
+            </button>
+            <button class="layui-btn layui-btn-lg layui-btn-normal">取消</button>
+        </div>
+    </div>
+</form>
+<script type="text/javascript" th:src="@{/js/customer/linkman.add.update.js}"></script>
+</body>
+</html>

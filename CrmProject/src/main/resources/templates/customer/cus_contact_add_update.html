@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <th:block th:include="common::common"/>
+</head>
+<body class="childrenBody">
+<form class="layui-form" style="width:80%;">
+    <input name="id" type="hidden" th:value="${contact?.id}"/>
+    <input name="cusId" type="hidden" th:value="${cusId}"/>
+    <div class="layui-form-item layui-row layui-col-xs12">
+        <label class="layui-form-label">交往往来时间</label>
+        <div class="layui-input-block">
+            <input type="text" class="layui-input userName"
+                   lay-verify="required" name="contactTime" id="contactTime"
+                   th:value="${#dates.format(contact?.contactTime,'yyyy-MM-dd HH:mm:ss')}"
+                   placeholder="请输入交往往来时间">
+        </div>
+    </div>
+    <div class="layui-form-item layui-row layui-col-xs12">
+        <label class="layui-form-label">交易往来地址</label>
+        <div class="layui-input-block">
+            <input type="text" class="layui-input userName"
+                   lay-verify="required" name="address" id="address" th:value="${contact?.address}"
+                   placeholder="请输入交易往来地址">
+        </div>
+    </div>
+    <div class="layui-form-item layui-row layui-col-xs12">
+        <label class="layui-form-label">交易往来overview</label>
+        <div class="layui-input-block">
+            <input type="text" class="layui-input userName"
+                   lay-verify="required" name="overview" id="overview" th:value="${contact?.overview}"
+                   placeholder="交易往来overview">
+        </div>
+    </div>
+
+    <br/>
+    <div class="layui-form-item layui-row layui-col-xs12">
+        <div class="layui-input-block">
+            <button class="layui-btn layui-btn-lg" lay-submit=""
+                    lay-filter="addOrUpdateCusContact">确认
+            </button>
+            <button class="layui-btn layui-btn-lg layui-btn-normal">取消</button>
+        </div>
+    </div>
+</form>
+<script type="text/javascript" th:src="@{/js/customer/contact.add.update.js}"></script>
+</body>
+</html>
