@@ -6,6 +6,7 @@ import com.softeem.crm.pojo.CusDevPlan;
 import com.softeem.crm.service.CusDevPlanService;
 import com.softeem.crm.service.SaleChanceService;
 import com.softeem.crm.vo.CusDevPlanQuery;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,6 +17,7 @@ import java.util.Map;
 
 @Controller
 @RequestMapping("/cus_dev_plan")
+@Slf4j
 public class CusDevPlanController extends BaseController {
 
     @Autowired
@@ -30,6 +32,7 @@ public class CusDevPlanController extends BaseController {
     */
     @RequestMapping("/index")
     public String index() {
+        log.info("修改");
         return "cusDevPlan/cus_dev_plan";
     }
 
