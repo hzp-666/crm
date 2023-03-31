@@ -33,6 +33,7 @@ public class CusDevPlanController extends BaseController {
     @RequestMapping("/index")
     public String index() {
         log.info("修改11111111111111111");
+        log.info("修改22222222222222222");
         return "cusDevPlan/cus_dev_plan";
     }
 
